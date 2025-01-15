@@ -1,0 +1,88 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Appetizers"
+        },
+        {
+            "id": 2,
+            "name": "Main Courses"
+        },
+        {
+            "id": 3,
+            "name": "Desserts"
+        },
+        {
+            "id": 4,
+            "name": "Beverages"
+        }
+    ],
+    "menuItems": [
+        {
+            "id": 1,
+            "name": "Bruschetta",
+            "description": "Grilled bread with tomatoes, garlic, and basil.",
+            "price": 6.99,
+            "categoryId": 1,
+            "image": "images/bruschetta.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Grilled Salmon",
+            "description": "Fresh salmon served with seasonal vegetables.",
+            "price": 18.99,
+            "categoryId": 2,
+            "image": "images/grilled_salmon.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Chocolate Lava Cake",
+            "description": "Warm chocolate cake with a gooey center.",
+            "price": 7.99,
+            "categoryId": 3,
+            "image": "images/lava_cake.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Fresh Lemonade",
+            "description": "Homemade lemonade with fresh lemons.",
+            "price": 3.99,
+            "categoryId": 4,
+            "image": "images/lemonade.jpg"
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "customerName": "John Doe",
+            "items": [
+                {
+                    "menuItemId": 2,
+                    "quantity": 1
+                },
+                {
+                    "menuItemId": 3,
+                    "quantity": 2
+                }
+            ],
+            "totalPrice": 34.97,
+            "status": "Preparing"
+        },
+        {
+            "id": 2,
+            "customerName": "Jane Smith",
+            "items": [
+                {
+                    "menuItemId": 1,
+                    "quantity": 2
+                },
+                {
+                    "menuItemId": 4,
+                    "quantity": 1
+                }
+            ],
+            "totalPrice": 17.97,
+            "status": "Completed"
+        }
+    ]
+}
