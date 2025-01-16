@@ -65,6 +65,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation 'com.google.firebase:firebase-auth:21.0.1' // Firebase sürümünün güncel olduğundan emin ol.
+    implementation 'com.google.android.gms:play-services-auth:20.0.1' // Google Play services sürümü güncel olmalı.
 }
 
 // Firebase için gerekli satırı buraya ekledim
