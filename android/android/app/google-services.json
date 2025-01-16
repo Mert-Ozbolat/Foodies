@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "894419976793",
+    "project_id": "foodies-f07de",
+    "storage_bucket": "foodies-f07de.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894419976793:android:3a7f8b2132965915b2e748",
+        "android_client_info": {
+          "package_name": "com.foodies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894419976793-16fq57tcapa1t02fejfkupiklitmkndb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodies",
+            "certificate_hash": "888a08d6ca4e599bdff7dfded912159d14ff0e4c"
+          }
+        },
+        {
+          "client_id": "894419976793-n7mrc72fomqqjt7vas67keklptmg6ik3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodies",
+            "certificate_hash": "578b41b9653d903ada35036c73ef062024c1f48e"
+          }
+        },
+        {
+          "client_id": "894419976793-3fl0uir1c3m2fk1seadhjq010u197o7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsk4KHPYfH7fqMItaHsKoZSYxhrRB2NdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894419976793-3fl0uir1c3m2fk1seadhjq010u197o7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
