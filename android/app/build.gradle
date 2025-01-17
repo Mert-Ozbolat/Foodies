@@ -2,23 +2,12 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
-/**
- * This is the configuration block to customize your React Native Android app.
- * By default you don't need to apply any configuration, just uncomment the lines you need.
- */
 react {
     /* Folders */
     autolinkLibrariesWithApp()
 }
 
-/**
- * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
- */
 def enableProguardInReleaseBuilds = false
-
-/**
- * The preferred build flavor of JavaScriptCore (JSC)
- */
 def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
@@ -47,8 +36,6 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -57,7 +44,7 @@ android {
 }
 
 dependencies {
-    // The version of react-native is set by the React Native Gradle Plugin
+    // React Native bağımlılıkları
     implementation("com.facebook.react:react-android")
 
     if (hermesEnabled.toBoolean()) {
@@ -66,9 +53,15 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation 'com.google.firebase:firebase-auth:21.0.1' // Firebase sürümünün güncel olduğundan emin ol.
-    implementation 'com.google.android.gms:play-services-auth:20.0.1' // Google Play services sürümü güncel olmalı.
+    // Firebase bağımlılıkları
+    implementation platform('com.google.firebase:firebase-bom:32.0.0') // Firebase BoM
+    implementation 'com.google.firebase:firebase-auth' // Firebase Authentication
+    implementation 'com.google.firebase:firebase-firestore' // Firestore (isteğe bağlı)
+    implementation 'com.google.firebase:firebase-analytics' // Firebase Analytics (isteğe bağlı)
+
+    // Google Play Services bağımlılıkları
+    implementation 'com.google.android.gms:play-services-auth:20.7.0' // Google Sign-In için
 }
 
-// Firebase için gerekli satırı buraya ekledim
+// Firebase için Google Services eklentisi
 apply plugin: 'com.google.gms.google-services'

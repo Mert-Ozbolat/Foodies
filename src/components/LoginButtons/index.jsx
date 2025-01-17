@@ -1,8 +1,12 @@
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import SignInStyle from '../../styles/SignInStyle';
+import { useNavigation } from '@react-navigation/native';
+import { HOME } from '../../utils/routes';
 
-const LoginBtn = () => {
+const LoginBtn = ({ google }) => {
+    const navigation = useNavigation();
+
     return (
         <View style={SignInStyle.buttons}>
 
@@ -22,7 +26,7 @@ const LoginBtn = () => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={SignInStyle.continueBtn}>
+                <TouchableOpacity style={SignInStyle.continueBtn} onPress={google}>
                     <View style={SignInStyle.imageSection}>
                         <Image
                             style={SignInStyle.continueImg}
@@ -53,10 +57,9 @@ const LoginBtn = () => {
                 <Text style={SignInStyle.or}>or</Text>
             </View>
 
-
-
             <View style={SignInStyle.signinContainer}>
-                <TouchableOpacity style={SignInStyle.signInBtn}>
+                <TouchableOpacity style={SignInStyle.signInBtn}
+                    onPress={() => navigation.navigate('BottomTabs', { screen: 'Home' })}>
                     <Text style={SignInStyle.signInText}>Sign in with Contact Number</Text>
                 </TouchableOpacity>
 

@@ -1,13 +1,35 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../../firebase/firebaseConfig";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import auth from "@react-native-firebase/auth";
 
-export const loginWithGoogle = createAsyncThunk("login/google", async (_, { rejectWithValue }) => {
+// Google ile Giriş Aksiyonu
+export const loginWithGoogle = createAsyncThunk(
+  "auth/loginWithGoogle",
+  async (_, { rejectWithValue }) => {
     try {
-        const result = await signInWithPopup(auth, provider);
-        return result.user;
+      // 1. Google Play Hizmetlerini kontrol et
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+
+      // 2. Google hesabı seç
+      const userInfo = await GoogleSignin.signIn();
+      console.log("Google Kullanıcı Bilgisi:", userInfo);
+
+      if (!userInfo.idToken) {
+        throw new Error("Google oturum açma başarısız. ID Token alınamadı.");
+      }
+
+      // 3. Firebase Kimlik Doğrulama
+      const googleCredential = auth.GoogleAuthProvider.credential(userInfo.idToken);
+      const userCredential = await auth().signInWithCredential(googleCredential);
+
+      console.log("Firebase Girişi Başarılı:", userCredential.user);
+
+      // 4. Redux için kullanıcıyı döndür
+      return userCredential.user;
+
     } catch (error) {
-        return rejectWithValue(error.message);
+      console.error("Google Giriş Hatası:", error);
+      return rejectWithValue(error.message || "Google ile giriş yapılamadı.");
     }
-}
+  }
 );

@@ -1,38 +1,53 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginWithGoogle } from "../action/loadinAction";
 
-
+// Başlangıç durumu
 const initialState = {
-    auth: false,
-    user: null,
-    pending: false,
-    error: null
-}
+    auth: false,     // Giriş yapıldı mı?
+    user: null,      // Kullanıcı bilgileri
+    loading: false,  // Yükleniyor durumu
+    error: null      // Hata mesajı
+};
 
 const loginSlice = createSlice({
-    name: 'login',
+    name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        // Oturum kapatma işlemi
+        logout: (state) => {
+            state.auth = false;
+            state.user = null;
+            state.loading = false;
+            state.error = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
+            // Giriş isteği başlatıldığında
             .addCase(loginWithGoogle.pending, (state) => {
-                state.pending = true;
-                state.error = null
-            })
-
-            .addCase(loginWithGoogle.fulfilled, (state, { payload }) => {
-                state.pending = false;
+                state.loading = true;
                 state.error = null;
-                state.auth = true;
-                state.user = payload
             })
 
-            .addCase(loginWithGoogle.rejected, (state, { payload }) => {
-                state.auth = false
-                state.error = payload;
-                state.pending = false
+            // Giriş başarılı olduğunda
+            .addCase(loginWithGoogle.fulfilled, (state, { payload }) => {
+                state.loading = false;
+                state.auth = true;
+                state.user = payload;
+                state.error = null;
             })
+
+            // Giriş başarısız olduğunda
+            .addCase(loginWithGoogle.rejected, (state, { payload }) => {
+                state.loading = false;
+                state.auth = false;
+                state.user = null;
+                state.error = payload || "Google ile giriş başarısız oldu.";
+            });
     }
-})
+});
+
+// Logout aksiyonu export edildi
+export const { logout } = loginSlice.actions;
 
 export default loginSlice.reducer;

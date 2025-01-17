@@ -24,7 +24,7 @@
             "description": "Grilled bread with tomatoes, garlic, and basil.",
             "price": 6.99,
             "categoryId": 1,
-            "image": "images/bruschetta.jpg"
+            "image": "./asstes/images/food1.png"
         },
         {
             "id": 2,
@@ -32,7 +32,7 @@
             "description": "Fresh salmon served with seasonal vegetables.",
             "price": 18.99,
             "categoryId": 2,
-            "image": "images/grilled_salmon.jpg"
+            "image": "./asstes/images/food1.png"
         },
         {
             "id": 3,
@@ -40,7 +40,7 @@
             "description": "Warm chocolate cake with a gooey center.",
             "price": 7.99,
             "categoryId": 3,
-            "image": "images/lava_cake.jpg"
+            "image": "./asstes/images/food1.png"
         },
         {
             "id": 4,
@@ -48,7 +48,7 @@
             "description": "Homemade lemonade with fresh lemons.",
             "price": 3.99,
             "categoryId": 4,
-            "image": "images/lemonade.jpg"
+            "image": "./asstes/images/food1.png"
         }
     ],
     "orders": [

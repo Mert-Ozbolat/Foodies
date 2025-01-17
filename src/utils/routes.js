@@ -1,5 +1,5 @@
-export const GETSTARTED = 'Get Started'
-export const SINGIN = "Sing In"
-export const SINGUP = "Sing Up"
-export const HOME = "Home Page"
+export const GETSTARTED = 'GetStarted'
+export const SINGIN = "SingIn"
+export const SINGUP = "SingUp"
 export const BASKET = "Basket"
+export const HOME = 'Home'
