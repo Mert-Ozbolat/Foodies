@@ -2,6 +2,7 @@ import { ActivityIndicator, StyleSheet, Text, View, FlatList } from 'react-nativ
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMenuAction } from '../store/action/getMenuAction';
+import HomeStyle from '../styles/HomePage/HomePage';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -13,26 +14,15 @@ const HomePage = () => {
         dispatch(getMenuAction());
     }, [dispatch]);
 
-    const renderItem = ({ item }) => (
-        <View style={styles.item}>
-            <Text style={styles.title}>{item.name}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-            <Text style={styles.price}>${item.price.toFixed(2)}</Text>
-        </View>
-    );
 
     return (
-        <View style={styles.container}>
+        <View style={HomeStyle.container}>
             {isLoading ? (
                 <View style={styles.loadingContainer}>
                     <ActivityIndicator size="large" color="#000" />
                 </View>
             ) : (
-                <FlatList
-                    data={menu}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={renderItem}
-                />
+                <Text>Veriler</Text>
             )}
         </View>
     );

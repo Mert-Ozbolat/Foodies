@@ -2,19 +2,43 @@
     "categories": [
         {
             "id": 1,
-            "name": "Appetizers"
+            "name": "Burger",
+            "image": "./asstes/icons/categories/hamburger.png"
         },
         {
             "id": 2,
-            "name": "Main Courses"
+            "name": "Pizza",
+            "image": "./asstes/icons/categories/pizza.png"
         },
         {
             "id": 3,
-            "name": "Desserts"
+            "name": "Noodles",
+            "image": "./asstes/icons/categories/noodles.png"
         },
         {
             "id": 4,
-            "name": "Beverages"
+            "name": "Chicken",
+            "image": "./asstes/icons/categories/chicken.png"
+        },
+        {
+            "id": 5,
+            "name": "Vegetarian",
+            "image": "./asstes/icons/categories/vegetarian.png"
+        },
+        {
+            "id": 6,
+            "name": "Cake",
+            "image": "./asstes/icons/categories/cake.png"
+        },
+        {
+            "id": 7,
+            "name": "Beer",
+            "image": "./asstes/icons/categories/beer.png"
+        },
+        {
+            "id": 8,
+            "name": "Others",
+            "image": "./asstes/icons/categories/melonpan.png"
         }
     ],
     "menuItems": [
