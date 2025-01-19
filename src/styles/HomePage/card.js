@@ -1,37 +1,49 @@
+import { StyleSheet } from "react-native";
+import { colors } from "../../theme/colors";
+
+
 const CardStyle = StyleSheet.create({
     card: {
-        width: '48%', // 2 kolon için genişlik (kenar boşluklarına göre ayarlandı)
-        backgroundColor: '#3f3f3f',
-        borderRadius: 8, // Kartın köşelerini yuvarla
-        padding: 10, // İçerik için iç boşluk
+        marginTop: 60,
+        height: 187,
+        width: '48%',
+        backgroundColor: '#fff',
+        borderRadius: 35, // Kartın köşelerini yuvarla
+        paddingTop: 70, // Kartın üst kısmına padding ekle
+        paddingLeft: 10, // İçerik için iç boşluk
+        paddingRight: 10, // İçerik için iç boşluk
+        paddingBottom: 10, // İçerik için iç boşluk
         marginBottom: 15, // Kartlar arasında dikey boşluk
         alignItems: 'center', // İçeriği yatayda ortala
-        justifyContent: 'center', // İçeriği dikeyde ortala
-        shadowColor: '#000', // Gölge için renk
+        justifyContent: 'flex-start', // İçeriği üstte başlat
+        shadowColor: '#fff', // Gölge için renk
         shadowOpacity: 0.1, // Gölge opaklığı
         shadowOffset: { width: 0, height: 2 }, // Gölge konumu
         shadowRadius: 4, // Gölge yayılması
         elevation: 3, // Android için gölge (yükseklik)
+        position: 'relative',
     },
 
     foodImg: {
-        width: 80, // Daha büyük resim
-        height: 80,
+        width: 120, // Daha büyük resim
+        height: 120,
         marginBottom: 10, // Resim ve metin arasında boşluk
         borderRadius: 8, // Resmin köşelerini yuvarla
+        position: 'absolute',
+        top: -55, // Resmi kartın üst kısmına yerleştir
     },
 
     foodName: {
-        color: colors.TextWhite,
-        fontSize: 16, // Başlık boyutu
+        color: '#000',
+        fontSize: 18, // Başlık boyutu
         fontWeight: '600',
         textAlign: 'center', // Metni ortala
         marginBottom: 5, // Metinler arası boşluk
     },
 
     fooddesc: {
-        color: colors.TextWhite,
-        fontSize: 14, // Açıklama boyutu
+        color: '#000',
+        fontSize: 16, // Açıklama boyutu
         fontWeight: '400',
         textAlign: 'left', // Sol hizalama
         marginBottom: 5, // Açıklama ve fiyat arasında boşluk
@@ -39,8 +51,8 @@ const CardStyle = StyleSheet.create({
     },
 
     foodPrice: {
-        color: colors.TextWhite,
-        fontSize: 15, // Fiyat boyutu
+        color: colors.TextGreen,
+        fontSize: 16, // Fiyat boyutu
         fontWeight: '500',
         textAlign: 'right', // Sağ hizalama
         flex: 1, // Genişlik ayarı
@@ -61,8 +73,18 @@ const CardStyle = StyleSheet.create({
 
     cardBottom: {
         display: 'flex',
+        flexDirection: 'col',
+        marginTop: 32,
+    },
+
+    cardInfo: {
+        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between', // Aralarındaki boşluk
         width: '100%', // Tam genişlik
+        marginTop: 17
     }
 });
+
+
+export default CardStyle

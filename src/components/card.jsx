@@ -4,6 +4,12 @@ import CardStyle from '../styles/HomePage/card'
 
 const Card = ({ item }) => {
 
+    const images = {
+        hamburger: require('../assets/images/food1.png'),
+    };
+
+
+
     const truncateText = (text, maxLength) => {
         if (text.length > maxLength) {
             return `${text.substring(0, maxLength)}...`;
@@ -14,12 +20,16 @@ const Card = ({ item }) => {
     const renderItem = ({ item }) => {
         return (
             <View style={CardStyle.card}>
-                <Image style={CardStyle.foodImg} source={{ uri: item.image }} />
-                <Text style={CardStyle.foodName}>{item.name}</Text>
+                <Image style={CardStyle.foodImg} source={images.hamburger} />
+
 
                 <View style={CardStyle.cardBottom}>
-                    <Text style={CardStyle.fooddesc}> {truncateText(item.description, 10)}</Text>
-                    <Text style={CardStyle.foodPrice}>{item.price}</Text>
+                    <Text style={CardStyle.foodName}>{item.name}</Text>
+
+                    <View style={CardStyle.cardInfo}>
+                        <Text style={CardStyle.fooddesc}> {truncateText(item.description, 7)}</Text>
+                        <Text style={CardStyle.foodPrice}>{item.price}</Text>
+                    </View>
                 </View>
 
             </View>
