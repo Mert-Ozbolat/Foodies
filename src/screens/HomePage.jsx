@@ -6,16 +6,19 @@ import HomeStyle from '../styles/HomePage/HomePage';
 import Header from '../components/header';
 import Search from '../components/search';
 import Categories from '../components/categories';
+import Card from '../components/card';
 
 const HomePage = () => {
     const dispatch = useDispatch();
     const { menu, isLoading } = useSelector(state => state.menu);
+
 
     console.log('Redux Store Menü:', menu);
 
     useEffect(() => {
         dispatch(getMenuAction());
     }, [dispatch]);
+
 
 
     return (
@@ -28,7 +31,7 @@ const HomePage = () => {
                     <ActivityIndicator size="large" color="#fff" />
                 </View>
             ) : (
-                <Text>Veriler</Text>
+                <Card item={menu} />
             )}
         </View>
     );
