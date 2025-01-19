@@ -5,5 +5,6 @@ export const colors = {
     TextGreen2: '#2B964F',
     Button1: '#02C543',
     Button2: '#2B964F',
-    LoginBtn: '#01040f'
+    LoginBtn: '#01040f',
+    InputBg: '#0E162C'
 }

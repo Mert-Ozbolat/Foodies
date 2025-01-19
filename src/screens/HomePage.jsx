@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMenuAction } from '../store/action/getMenuAction';
 import HomeStyle from '../styles/HomePage/HomePage';
+import Header from '../components/header';
+import Search from '../components/search';
+import Categories from '../components/categories';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -17,9 +20,12 @@ const HomePage = () => {
 
     return (
         <View style={HomeStyle.container}>
+            <Header />
+            <Search />
+            <Categories />
             {isLoading ? (
                 <View style={styles.loadingContainer}>
-                    <ActivityIndicator size="large" color="#000" />
+                    <ActivityIndicator size="large" color="#fff" />
                 </View>
             ) : (
                 <Text>Veriler</Text>

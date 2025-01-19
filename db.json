@@ -3,42 +3,42 @@
         {
             "id": 1,
             "name": "Burger",
-            "image": "./asstes/icons/categories/hamburger.png"
+            "image": "src/assets/icons/categories/hamburger.png"
         },
         {
             "id": 2,
             "name": "Pizza",
-            "image": "./asstes/icons/categories/pizza.png"
+            "image": "src/assets/icons/categories/pizza.png"
         },
         {
             "id": 3,
             "name": "Noodles",
-            "image": "./asstes/icons/categories/noodles.png"
+            "image": "src/assets/icons/categories/noodles.png"
         },
         {
             "id": 4,
             "name": "Chicken",
-            "image": "./asstes/icons/categories/chicken.png"
+            "image": "src/assets/icons/categories/chicken.png"
         },
         {
             "id": 5,
             "name": "Vegetarian",
-            "image": "./asstes/icons/categories/vegetarian.png"
+            "image": "src/assets/icons/categories/vegetarian.png"
         },
         {
             "id": 6,
             "name": "Cake",
-            "image": "./asstes/icons/categories/cake.png"
+            "image": "src/assets/icons/categories/cake.png"
         },
         {
             "id": 7,
             "name": "Beer",
-            "image": "./asstes/icons/categories/beer.png"
+            "image": "src/assets/icons/categories/beer.png"
         },
         {
             "id": 8,
             "name": "Others",
-            "image": "./asstes/icons/categories/melonpan.png"
+            "image": "src/assets/icons/categories/melonpan.png"
         }
     ],
     "menuItems": [
@@ -48,7 +48,7 @@
             "description": "Grilled bread with tomatoes, garlic, and basil.",
             "price": 6.99,
             "categoryId": 1,
-            "image": "./asstes/images/food1.png"
+            "image": "src/assets/images/food1.png"
         },
         {
             "id": 2,
@@ -56,7 +56,7 @@
             "description": "Fresh salmon served with seasonal vegetables.",
             "price": 18.99,
             "categoryId": 2,
-            "image": "./asstes/images/food1.png"
+            "image": "src/assets/images/food1.png"
         },
         {
             "id": 3,
@@ -64,7 +64,7 @@
             "description": "Warm chocolate cake with a gooey center.",
             "price": 7.99,
             "categoryId": 3,
-            "image": "./asstes/images/food1.png"
+            "image": "src/assets/images/food1.png"
         },
         {
             "id": 4,
@@ -72,7 +72,7 @@
             "description": "Homemade lemonade with fresh lemons.",
             "price": 3.99,
             "categoryId": 4,
-            "image": "./asstes/images/food1.png"
+            "image": "src/assets/images/food1.png"
         }
     ],
     "orders": [
