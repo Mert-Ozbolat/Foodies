@@ -25,10 +25,10 @@ const CardStyle = StyleSheet.create({
     },
 
     foodImg: {
-        width: 120, // Daha büyük resim
-        height: 120,
+        objectFit: 'contain',
+        width: 137, // Daha büyük resim
+        height: 137,
         marginBottom: 10, // Resim ve metin arasında boşluk
-        borderRadius: 8, // Resmin köşelerini yuvarla
         position: 'absolute',
         top: -55, // Resmi kartın üst kısmına yerleştir
     },
@@ -44,7 +44,7 @@ const CardStyle = StyleSheet.create({
     fooddesc: {
         color: '#000',
         fontSize: 16, // Açıklama boyutu
-        fontWeight: '400',
+        fontWeight: '500',
         textAlign: 'left', // Sol hizalama
         marginBottom: 5, // Açıklama ve fiyat arasında boşluk
         flex: 1, // Genişlik ayarı

@@ -5,7 +5,7 @@ import CardStyle from '../styles/HomePage/card'
 const Card = ({ item }) => {
 
     const images = {
-        hamburger: require('../assets/images/food1.png'),
+        hamburger: require('../assets/images/food3.png'),
     };
 
 
@@ -27,7 +27,7 @@ const Card = ({ item }) => {
                     <Text style={CardStyle.foodName}>{item.name}</Text>
 
                     <View style={CardStyle.cardInfo}>
-                        <Text style={CardStyle.fooddesc}> {truncateText(item.description, 7)}</Text>
+                        <Text style={CardStyle.fooddesc}> {truncateText(item.description, 4)}</Text>
                         <Text style={CardStyle.foodPrice}>{item.price}</Text>
                     </View>
                 </View>
