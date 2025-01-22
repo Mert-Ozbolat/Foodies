@@ -3,3 +3,4 @@ export const SINGIN = "SingIn"
 export const SINGUP = "SingUp"
 export const BASKET = "Basket"
 export const HOME = 'Home'
+export const PRODUCT = 'Product'

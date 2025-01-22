@@ -1,12 +1,14 @@
-import { View, Text, Image, FlatList } from 'react-native'
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import CardStyle from '../styles/HomePage/card'
+import { PRODUCT } from '../utils/routes';
+import { useNavigation } from '@react-navigation/native';
 
 const Card = ({ item }) => {
 
-    const images = {
-        hamburger: require('../assets/images/food3.png'),
-    };
+    const navigation = useNavigation();
+
+    const images = { hamburger: require('../assets/images/food3.png') };
 
 
 
@@ -19,7 +21,9 @@ const Card = ({ item }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={CardStyle.card}>
+            <TouchableOpacity
+                style={CardStyle.card}
+                onPress={() => navigation.navigate(PRODUCT, { item })}>
                 <Image style={CardStyle.foodImg} source={images.hamburger} />
                 <View style={CardStyle.cardBottom}>
                     <Text style={CardStyle.foodName}>{item.name}</Text>
@@ -29,8 +33,7 @@ const Card = ({ item }) => {
                         <Text style={CardStyle.foodPrice}>{item.price}</Text>
                     </View>
                 </View>
-
-            </View>
+            </TouchableOpacity>
         )
     }
 

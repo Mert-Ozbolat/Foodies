@@ -5,7 +5,7 @@ import { colors } from "../../theme/colors";
 const CardStyle = StyleSheet.create({
     card: {
         marginTop: 60,
-        height: 247,
+        height: 227,
         width: '48%',
         backgroundColor: '#fff',
         borderRadius: 35, // Kartın köşelerini yuvarla
@@ -60,13 +60,13 @@ const CardStyle = StyleSheet.create({
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // flexWrap: 'wrap',
+        flexWrap: 'wrap',
     },
 
     list: {
         paddingHorizontal: 10, // Ekran kenarından boşluk
         flexDirection: 'row',
-        // flexWrap: 'wrap', // Satır düzeni
+        flexWrap: 'wrap', // Satır düzeni
         justifyContent: 'space-between', // Kartlar arasında eşit boşluk
     },
 
