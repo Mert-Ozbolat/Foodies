@@ -21,13 +21,11 @@ const Card = ({ item }) => {
         return (
             <View style={CardStyle.card}>
                 <Image style={CardStyle.foodImg} source={images.hamburger} />
-
-
                 <View style={CardStyle.cardBottom}>
                     <Text style={CardStyle.foodName}>{item.name}</Text>
 
                     <View style={CardStyle.cardInfo}>
-                        <Text style={CardStyle.fooddesc}> {truncateText(item.description, 4)}</Text>
+                        <Text style={CardStyle.fooddesc}> {truncateText(item.description, 7)}</Text>
                         <Text style={CardStyle.foodPrice}>{item.price}</Text>
                     </View>
                 </View>

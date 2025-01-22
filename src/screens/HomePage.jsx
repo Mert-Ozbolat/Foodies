@@ -1,4 +1,4 @@
-import { ActivityIndicator, StyleSheet, Text, View, FlatList } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMenuAction } from '../store/action/getMenuAction';
@@ -7,6 +7,7 @@ import Header from '../components/header';
 import Search from '../components/search';
 import Categories from '../components/categories';
 import Card from '../components/card';
+
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,10 @@ const HomePage = () => {
 
 
     return (
-        <View style={HomeStyle.container}>
+        <ScrollView style={HomeStyle.container}
+            showsVerticalScrollIndicator={false} // Dikey kaydırma çubuğunu gizler
+            showsHorizontalScrollIndicator={false}
+        >
             <Header />
             <Search />
             <Categories />
@@ -33,7 +37,7 @@ const HomePage = () => {
             ) : (
                 <Card item={menu} />
             )}
-        </View>
+        </ScrollView>
     );
 };
 

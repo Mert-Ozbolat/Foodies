@@ -5,7 +5,7 @@ import { colors } from "../../theme/colors";
 const CardStyle = StyleSheet.create({
     card: {
         marginTop: 60,
-        height: 187,
+        height: 247,
         width: '48%',
         backgroundColor: '#fff',
         borderRadius: 35, // Kartın köşelerini yuvarla
@@ -15,7 +15,7 @@ const CardStyle = StyleSheet.create({
         paddingBottom: 10, // İçerik için iç boşluk
         marginBottom: 15, // Kartlar arasında dikey boşluk
         alignItems: 'center', // İçeriği yatayda ortala
-        justifyContent: 'flex-start', // İçeriği üstte başlat
+        justifyContent: 'center', // İçeriği üstte başlat
         shadowColor: '#fff', // Gölge için renk
         shadowOpacity: 0.1, // Gölge opaklığı
         shadowOffset: { width: 0, height: 2 }, // Gölge konumu
@@ -47,7 +47,6 @@ const CardStyle = StyleSheet.create({
         fontWeight: '500',
         textAlign: 'left', // Sol hizalama
         marginBottom: 5, // Açıklama ve fiyat arasında boşluk
-        flex: 1, // Genişlik ayarı
     },
 
     foodPrice: {
@@ -61,13 +60,13 @@ const CardStyle = StyleSheet.create({
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        flexWrap: 'wrap',
+        // flexWrap: 'wrap',
     },
 
     list: {
         paddingHorizontal: 10, // Ekran kenarından boşluk
         flexDirection: 'row',
-        flexWrap: 'wrap', // Satır düzeni
+        // flexWrap: 'wrap', // Satır düzeni
         justifyContent: 'space-between', // Kartlar arasında eşit boşluk
     },
 
