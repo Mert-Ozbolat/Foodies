@@ -42,6 +42,28 @@ const ProductStyle = StyleSheet.create({
         overflow: 'hidden',
         flexWrap: 'wrap',
     },
+    footer: {
+        flex: 1,
+        alignSelf: 'flex-end',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        width: '%100',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        padding: 20,
+        backgroundColor: colors.Button1,
+        borderRadius: 50,
+    },
+    buttonText: {
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: '500',
+        color: colors.TextWhite,
+    },
 
 })
 
