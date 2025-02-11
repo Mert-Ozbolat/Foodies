@@ -2,9 +2,12 @@ import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'reac
 import React from 'react'
 import ProductStyle from '../styles/ProductPage';
 import Header from '../components/ProductPage/header';
+import { BASKET } from '../utils/routes';
+import { useNavigation } from '@react-navigation/native';
 
 const ProductPage = ({ route }) => {
 
+    const navigation = useNavigation();
     const { item } = route.params;
 
     return (
@@ -23,7 +26,9 @@ const ProductPage = ({ route }) => {
             </View>
 
             <View style={ProductStyle.footer} >
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate(BASKET, { item })}
+                >
                     <View style={ProductStyle.button}>
                         <Text style={ProductStyle.buttonText}>Add to Basket</Text>
                     </View>

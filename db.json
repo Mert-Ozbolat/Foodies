@@ -56,7 +56,7 @@
             "description": "Fresh salmon served with seasonal vegetables.",
             "price": 18.99,
             "categoryId": 2,
-            "image": "src/assets/images/food1.png"
+            "image": "src/assets/images/food2.png"
         },
         {
             "id": 3,
@@ -64,7 +64,7 @@
             "description": "Warm chocolate cake with a gooey center.",
             "price": 7.99,
             "categoryId": 3,
-            "image": "src/assets/images/food1.png"
+            "image": "src/assets/images/food3.png"
         },
         {
             "id": 4,
@@ -72,7 +72,55 @@
             "description": "Homemade lemonade with fresh lemons.",
             "price": 3.99,
             "categoryId": 4,
-            "image": "src/assets/images/food1.png"
+            "image": "src/assets/images/food4.png"
+        },
+        {
+            "id": 5,
+            "name": "Margherita Pizza",
+            "description": "Classic pizza with fresh tomatoes, mozzarella, and basil.",
+            "price": 12.99,
+            "categoryId": 5,
+            "image": "src/assets/images/food5.png"
+        },
+        {
+            "id": 6,
+            "name": "Caesar Salad",
+            "description": "Crisp romaine lettuce, croutons, and Caesar dressing.",
+            "price": 9.99,
+            "categoryId": 6,
+            "image": "src/assets/images/food6.png"
+        },
+        {
+            "id": 7,
+            "name": "Tiramisu",
+            "description": "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream.",
+            "price": 8.99,
+            "categoryId": 7,
+            "image": "src/assets/images/food7.png"
+        },
+        {
+            "id": 8,
+            "name": "Iced Coffee",
+            "description": "Chilled coffee with milk and a hint of vanilla.",
+            "price": 4.99,
+            "categoryId": 8,
+            "image": "src/assets/images/food8.png"
+        },
+        {
+            "id": 9,
+            "name": "Grilled Ribeye Steak",
+            "description": "Juicy ribeye steak grilled to perfection, served with mashed potatoes.",
+            "price": 24.99,
+            "categoryId": 9,
+            "image": "src/assets/images/food7.png"
+        },
+        {
+            "id": 10,
+            "name": "Berry Smoothie",
+            "description": "Refreshing smoothie with mixed berries and yogurt.",
+            "price": 5.99,
+            "categoryId": 10,
+            "image": "src/assets/images/food7.png"
         }
     ],
     "orders": [

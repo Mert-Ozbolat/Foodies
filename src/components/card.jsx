@@ -32,6 +32,24 @@ const Card = ({ item }) => {
             case 4:
                 foodImage = require('../assets/images/food4.png');
                 break;
+            case 5:
+                foodImage = require('../assets/images/food5.png');
+                break;
+            case 6:
+                foodImage = require('../assets/images/food6.png');
+                break;
+            case 7:
+                foodImage = require('../assets/images/food7.png');
+                break;
+            case 8:
+                foodImage = require('../assets/images/food8.png');
+                break;
+            case 9:
+                foodImage = require('../assets/images/food9.png');
+                break;
+            case 10:
+                foodImage = require('../assets/images/food10.png');
+                break;
             default:
                 foodImage = require('../assets/images/food1.png');
         }
