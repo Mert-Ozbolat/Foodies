@@ -2,12 +2,12 @@ import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'reac
 import React from 'react'
 import ProductStyle from '../styles/ProductPage';
 import Header from '../components/ProductPage/header';
-import { BASKET } from '../utils/routes';
-import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../store/slice/basketSlice';
 
 const ProductPage = ({ route }) => {
 
-    const navigation = useNavigation();
+    const dispatch = useDispatch()
     const { item } = route.params;
 
     return (
@@ -27,7 +27,7 @@ const ProductPage = ({ route }) => {
 
             <View style={ProductStyle.footer} >
                 <TouchableOpacity
-                    onPress={() => navigation.navigate(BASKET, { item })}
+                    onPress={() => dispatch(addToBasket(item))}
                 >
                     <View style={ProductStyle.button}>
                         <Text style={ProductStyle.buttonText}>Add to Basket</Text>
