@@ -7,29 +7,27 @@ import Header from '../components/header';
 import Search from '../components/search';
 import Categories from '../components/categories';
 import Card from '../components/card';
+import getCategory from '../store/action/getCategory';
 
 
 const HomePage = () => {
     const dispatch = useDispatch();
     const { menu, isLoading } = useSelector(state => state.menu);
-
-
-    console.log('Redux Store Menü:', menu);
+    const { category } = useSelector(state => state.category);
 
     useEffect(() => {
         dispatch(getMenuAction());
+        dispatch(getCategory())
     }, [dispatch]);
-
-
 
     return (
         <ScrollView style={HomeStyle.container}
-            showsVerticalScrollIndicator={false} // Dikey kaydırma çubuğunu gizler
+            showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
         >
             <Header />
             <Search />
-            <Categories />
+            <Categories item={category} />
             {isLoading ? (
                 <View style={styles.loadingContainer}>
                     <ActivityIndicator size="large" color="#fff" />

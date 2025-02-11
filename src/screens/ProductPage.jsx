@@ -13,9 +13,7 @@ const ProductPage = ({ route }) => {
             <Header />
 
             <View style={ProductStyle.section}>
-                <Image style={ProductStyle.productImg} source={{
-                    uri: 'https://img.freepik.com/premium-vector/error-404-found-glitch-effect_8024-4.jpg?w=740'
-                }} />
+                <Image style={ProductStyle.productImg} source={item.image} />
 
                 <View style={ProductStyle.descriptions}>
                     <Text style={ProductStyle.productName}>{item.name}</Text>
@@ -25,7 +23,7 @@ const ProductPage = ({ route }) => {
             </View>
 
             <View style={ProductStyle.footer} >
-                <TouchableOpacity >
+                <TouchableOpacity>
                     <View style={ProductStyle.button}>
                         <Text style={ProductStyle.buttonText}>Add to Basket</Text>
                     </View>

@@ -4,41 +4,48 @@ import { colors } from "../../theme/colors";
 
 const CardStyle = StyleSheet.create({
     card: {
+        display: 'flex',
         marginTop: 60,
-        height: 227,
+        height: 200,
         width: '48%',
         backgroundColor: '#fff',
-        borderRadius: 35, // Kartın köşelerini yuvarla
-        paddingTop: 70, // Kartın üst kısmına padding ekle
-        paddingLeft: 10, // İçerik için iç boşluk
-        paddingRight: 10, // İçerik için iç boşluk
-        paddingBottom: 10, // İçerik için iç boşluk
-        marginBottom: 15, // Kartlar arasında dikey boşluk
-        alignItems: 'center', // İçeriği yatayda ortala
-        justifyContent: 'center', // İçeriği üstte başlat
-        shadowColor: '#fff', // Gölge için renk
-        shadowOpacity: 0.1, // Gölge opaklığı
-        shadowOffset: { width: 0, height: 2 }, // Gölge konumu
-        shadowRadius: 4, // Gölge yayılması
-        elevation: 3, // Android için gölge (yükseklik)
+        borderRadius: 25,
+        paddingTop: 70,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 10,
+        marginBottom: 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#fff',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 4,
+        elevation: 3,
         position: 'relative',
+    },
+
+    cards: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     foodImg: {
         objectFit: 'contain',
-        width: 137, // Daha büyük resim
-        height: 137,
-        marginBottom: 10, // Resim ve metin arasında boşluk
+        width: 147,
+        height: 147,
+        marginBottom: 10,
         position: 'absolute',
-        top: -55, // Resmi kartın üst kısmına yerleştir
+        top: -68,
     },
 
     foodName: {
         color: '#000',
-        fontSize: 18, // Başlık boyutu
+        fontSize: 18,
         fontWeight: '600',
-        textAlign: 'center', // Metni ortala
-        marginBottom: 5, // Metinler arası boşluk
+        textAlign: 'center',
+        marginBottom: 5,
     },
 
     fooddesc: {
@@ -64,11 +71,14 @@ const CardStyle = StyleSheet.create({
     },
 
     list: {
-        paddingHorizontal: 10, // Ekran kenarından boşluk
+        paddingHorizontal: 10,
         flexDirection: 'row',
-        flexWrap: 'wrap', // Satır düzeni
-        justifyContent: 'space-between', // Kartlar arasında eşit boşluk
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 10,
     },
+
 
     cardBottom: {
         display: 'flex',

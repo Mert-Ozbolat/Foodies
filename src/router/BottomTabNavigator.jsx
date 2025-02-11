@@ -1,10 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BASKET, HOME } from '../utils/routes';
+import { BASKET, HOME, SINGIN } from '../utils/routes';
 import HomePage from '../screens/HomePage';
 import BasketPage from '../screens/BasketPage';
 import { Image, View } from 'react-native';
 import { colors } from '../theme/colors';
+import SignInPage from '../screens/SignInPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,6 +38,23 @@ const BottomTabs = () => {
                 }}
             />
             <Tab.Screen
+                name={SINGIN}
+                component={SignInPage}
+                options={{
+                    tabBarLabel: '',
+                    tabBarIcon: () => (
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Image
+                                source={require('../assets/icons/navigation/email.png')}
+                                style={{ width: 25, height: 25 }}
+                                resizeMode="contain"
+                            />
+                        </View>
+                    ),
+                }}
+            />
+
+            <Tab.Screen
                 name={BASKET}
                 component={BasketPage}
                 options={{
@@ -44,7 +62,7 @@ const BottomTabs = () => {
                     tabBarIcon: () => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Image
-                                source={require('../assets/icons/navigation/email.png')}
+                                source={require('../assets/icons/navigation/wallet.png')}
                                 style={{ width: 25, height: 25 }}
                                 resizeMode="contain"
                             />

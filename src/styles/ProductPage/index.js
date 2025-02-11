@@ -44,7 +44,6 @@ const ProductStyle = StyleSheet.create({
     },
     footer: {
         flex: 1,
-        alignSelf: 'flex-end',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
