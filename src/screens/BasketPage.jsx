@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, Image, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromBasket } from "../store/slice/basketSlice";
+import { decreaseQuantity, increaseQuantity, removeFromBasket } from "../store/slice/basketSlice";
 import GeneralStyle from "../styles/GeneralStyle";
 import BasketStyle from "../styles/BasketPage/Basket";
-import { Trash } from "iconsax-react-native";
+import { AddCircle, MinusCirlce, Trash } from "iconsax-react-native";
 
 
 const BasketPage = () => {
@@ -21,7 +21,7 @@ const BasketPage = () => {
                 renderItem={({ item }) => {
                     let foodImage;
 
-                    switch (item.id) {
+                    switch (Number(item.id)) {
                         case 1:
                             foodImage = require('../assets/images/food1.png');
                             break;
@@ -72,14 +72,31 @@ const BasketPage = () => {
 
                                 <View style={BasketStyle.cartBottom}>
                                     <Text style={BasketStyle.price}>{item.price} $</Text>
-                                    <Text style={BasketStyle.quantity}>Adet: {item.quantity}</Text>
+
+
+                                    <View style={BasketStyle.quantityContainer}>
+
+                                        <Pressable
+                                            onPress={() => dispatch(increaseQuantity(item.id))}
+                                        ><AddCircle size="32" color="#FFF" /></Pressable>
+
+
+                                        <Text style={BasketStyle.quantity}>x{item.quantity}</Text>
+
+                                        <Pressable
+                                            onPress={() => dispatch(decreaseQuantity(item.id))}
+                                        ><MinusCirlce size="32" color="#FFF" /></Pressable>
+
+                                    </View>
+
+
                                 </View>
                             </View>
                         </View>
                     );
                 }}
             />
-            <Text style={{ fontSize: 18, fontWeight: "bold", marginVertical: 10 }}>Toplam: {totalPrice} $</Text>
+            <Text style={{ fontSize: 18, fontWeight: "bold", marginVertical: 10, color: 'white' }}>Toplam: {totalPrice} $</Text>
         </View>
     );
 };

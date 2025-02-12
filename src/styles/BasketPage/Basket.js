@@ -58,17 +58,25 @@ const BasketStyle = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: 'center',
-        marginTop: 15
+        marginTop: 15,
+        marginBottom: 6,
     },
     price: {
         fontSize: 25,
         color: colors.TextGreen,
         fontWeight: "bold",
     },
+    quantityContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: 'space-between',
+    },
     quantity: {
         fontSize: 14,
         color: "#fff",
-    }
+        padding: 5
+    },
+
 });
 
 
