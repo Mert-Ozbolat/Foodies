@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, FlatList, Image, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { decreaseQuantity, increaseQuantity, removeFromBasket } from "../store/slice/basketSlice";
+import { decreaseQuantity, increaseQuantity, removeFromBasket, loadBasketData } from "../store/slice/basketSlice";
 import GeneralStyle from "../styles/GeneralStyle";
 import BasketStyle from "../styles/BasketPage/Basket";
 import { AddCircle, MinusCirlce, Trash } from "iconsax-react-native";
 
-
 const BasketPage = () => {
-
     const { cartItem, totalPrice } = useSelector((state) => state.basket);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadBasketData());  // Uygulama açıldığında AsyncStorage'tan veriyi yükle
+    }, [dispatch]);
 
     return (
         <View style={GeneralStyle.container}>
@@ -20,7 +22,6 @@ const BasketPage = () => {
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => {
                     let foodImage;
-
                     switch (Number(item.id)) {
                         case 1:
                             foodImage = require('../assets/images/food1.png');
@@ -72,24 +73,17 @@ const BasketPage = () => {
 
                                 <View style={BasketStyle.cartBottom}>
                                     <Text style={BasketStyle.price}>{item.price} $</Text>
-
-
                                     <View style={BasketStyle.quantityContainer}>
-
                                         <Pressable
                                             onPress={() => dispatch(increaseQuantity(item.id))}
                                         ><AddCircle size="32" color="#FFF" /></Pressable>
-
 
                                         <Text style={BasketStyle.quantity}>x{item.quantity}</Text>
 
                                         <Pressable
                                             onPress={() => dispatch(decreaseQuantity(item.id))}
                                         ><MinusCirlce size="32" color="#FFF" /></Pressable>
-
                                     </View>
-
-
                                 </View>
                             </View>
                         </View>
