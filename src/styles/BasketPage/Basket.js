@@ -76,7 +76,43 @@ const BasketStyle = StyleSheet.create({
         color: "#fff",
         padding: 5
     },
-
+    payment: {
+        flex: 0.6,
+        justifyContent: 'space-between',
+        borderTopWidth: 2,
+        borderColor: '#8f8f8f'
+    },
+    group: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        padding: 15,
+    },
+    total: {
+        fontSize: 20,
+        fontWeight: '600',
+        color: colors.TextWhite
+    },
+    totalPrice: {
+        fontSize: 20,
+        fontWeight: '600',
+        color: colors.TextGreen
+    },
+    checkout: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        paddingVertical: 15,
+        backgroundColor: colors.Button2,
+        borderRadius: 20,
+        marginBottom: 10
+    },
+    checkoutText: {
+        fontSize: 20,
+        fontWeight: '500',
+        color: colors.TextWhite,
+    }
 });
 
 

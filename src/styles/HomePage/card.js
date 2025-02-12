@@ -33,12 +33,15 @@ const CardStyle = StyleSheet.create({
 
     foodImg: {
         objectFit: 'contain',
-        width: 147,
-        height: 147,
+        width: 140,
+        height: 140,
         marginBottom: 10,
         position: 'absolute',
-        top: -68,
+        top: -140,
+        left: '50%',
+        transform: [{ translateX: -70 }],
     },
+
 
     foodName: {
         color: '#000',
@@ -72,8 +75,7 @@ const CardStyle = StyleSheet.create({
 
     list: {
         paddingHorizontal: 10,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 10,

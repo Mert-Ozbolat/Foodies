@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, Text, FlatList, Image, Pressable } from "react-native";
+import { View, Text, FlatList, Image, Pressable, Button, ScrollView } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { decreaseQuantity, increaseQuantity, removeFromBasket, loadBasketData } from "../store/slice/basketSlice";
 import GeneralStyle from "../styles/GeneralStyle";
@@ -11,7 +11,7 @@ const BasketPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadBasketData());  // Uygulama açıldığında AsyncStorage'tan veriyi yükle
+        dispatch(loadBasketData());
     }, [dispatch]);
 
     return (
@@ -58,6 +58,7 @@ const BasketPage = () => {
                     }
 
                     return (
+
                         <View style={BasketStyle.cart}>
                             <View style={BasketStyle.cartLeft}>
                                 <Image
@@ -90,7 +91,26 @@ const BasketPage = () => {
                     );
                 }}
             />
-            <Text style={{ fontSize: 18, fontWeight: "bold", marginVertical: 10, color: 'white' }}>Toplam: {totalPrice} $</Text>
+
+            <View style={BasketStyle.payment}>
+                <View>
+                    <View style={BasketStyle.group}>
+                        <Text style={BasketStyle.total}>Delivery Fee</Text>
+                        <Text style={BasketStyle.totalPrice}>$2.00</Text>
+                    </View>
+
+
+                    <View style={BasketStyle.group}>
+                        <Text style={BasketStyle.total}>Total</Text>
+                        <Text style={BasketStyle.totalPrice}>${totalPrice + 2}</Text>
+                    </View>
+                </View>
+
+
+                <Pressable style={BasketStyle.checkout}>
+                    <Text style={BasketStyle.checkoutText}>Checkout</Text>
+                </Pressable>
+            </View>
         </View>
     );
 };

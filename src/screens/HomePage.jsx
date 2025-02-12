@@ -1,4 +1,4 @@
-import { ActivityIndicator, StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, FlatList, ScrollView, Image } from 'react-native';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMenuAction } from '../store/action/getMenuAction';
@@ -8,6 +8,7 @@ import Search from '../components/search';
 import Categories from '../components/categories';
 import Card from '../components/card';
 import getCategory from '../store/action/getCategory';
+import { colors } from '../theme/colors';
 
 
 const HomePage = () => {
@@ -27,6 +28,7 @@ const HomePage = () => {
         >
             <Header />
             <Search />
+
             <Categories item={category} />
             {isLoading ? (
                 <View style={styles.loadingContainer}>
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     item: {
         padding: 10,
         borderBottomWidth: 1,
