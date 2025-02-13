@@ -4,6 +4,7 @@ import ProductStyle from '../styles/ProductPage';
 import Header from '../components/ProductPage/header';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../store/slice/basketSlice';
+import FlashMessage from 'react-native-flash-message';
 
 const ProductPage = ({ route }) => {
 
@@ -12,11 +13,11 @@ const ProductPage = ({ route }) => {
 
     return (
         <View style={ProductStyle.container}>
-
             <Header />
+            <FlashMessage position="top" />
 
             <View style={ProductStyle.section}>
-                <Image style={ProductStyle.productImg} source={item.image} />
+                <Image style={ProductStyle.productImg} source={item} />
 
                 <View style={ProductStyle.descriptions}>
                     <Text style={ProductStyle.productName}>{item.name}</Text>
@@ -24,7 +25,6 @@ const ProductPage = ({ route }) => {
                 </View>
 
             </View>
-
             <View style={ProductStyle.footer} >
                 <TouchableOpacity
                     onPress={() => dispatch(addToBasket(item))}
@@ -34,7 +34,6 @@ const ProductPage = ({ route }) => {
                     </View>
                 </TouchableOpacity>
             </View>
-
         </View >
     )
 }

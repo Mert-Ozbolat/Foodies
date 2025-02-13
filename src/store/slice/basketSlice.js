@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import FlashMessage, { showMessage } from 'react-native-flash-message';
+import { colors } from './../../theme/colors';
+
 
 const initialState = {
     cartItem: [],
@@ -25,6 +28,20 @@ const basketSlice = createSlice({
 
             // AsyncStorage'a kaydetme
             saveBasketToStorage(state);
+
+
+            showMessage({
+                message: "Başarılı!",
+                description: "Ürün sepete eklendi 🎉",
+                type: "success", // success, danger, warning, info kullanılabilir
+                icon: "success", // veya "auto" kullanabilirsin
+                duration: 2000,  // 3 saniye sonra kapanır
+                style: { backgroundColor: colors.Button1, borderRadius: 10, marginTop: 20 },
+                titleStyle: { fontSize: 20 },
+                textStyle: { fontSize: 18 },
+            });
+
+
         },
 
         removeFromBasket: (state, action) => {
