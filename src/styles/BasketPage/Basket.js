@@ -4,6 +4,9 @@ import { colors } from "../../theme/colors";
 
 
 const BasketStyle = StyleSheet.create({
+    basket: {
+        flex: 1,
+    },
     Header: {
         fontSize: 22,
         textAlign: 'center',
@@ -22,7 +25,7 @@ const BasketStyle = StyleSheet.create({
         height: 125,
         width: 390,
         marginTop: 30,
-        position: 'relative'
+        position: 'relative',
     },
     cartLeft: {
         width: 140, // Sabit genişlik
@@ -77,7 +80,7 @@ const BasketStyle = StyleSheet.create({
         padding: 5
     },
     payment: {
-        flex: 0.6,
+        flex: 0.4,
         justifyContent: 'space-between',
         borderTopWidth: 2,
         borderColor: '#8f8f8f'
