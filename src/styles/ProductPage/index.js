@@ -7,6 +7,9 @@ const ProductStyle = StyleSheet.create({
         backgroundColor: colors.BgColor,
         paddingHorizontal: 16, // Kenar boşlukları eklendi
     },
+    header: {
+        marginTop: 20
+    },
     section: {
         alignItems: "center",
         justifyContent: "center",
