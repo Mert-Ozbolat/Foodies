@@ -4,13 +4,12 @@ import CardStyle from '../styles/HomePage/card';
 import { PRODUCT } from '../utils/routes';
 import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
+import truncateText from '../utils/truncateText';
 
 const Card = ({ item }) => {
     const navigation = useNavigation();
 
-    const truncateText = (text, maxLength) => {
-        return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
-    };
+
 
     const renderItem = ({ item, index }) => {
         let foodImage;

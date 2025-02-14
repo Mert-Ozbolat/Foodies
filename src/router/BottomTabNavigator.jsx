@@ -4,8 +4,8 @@ import { BASKET, HOME, SINGIN } from '../utils/routes';
 import HomePage from '../screens/HomePage';
 import BasketPage from '../screens/BasketPage';
 import { Image, View } from 'react-native';
-import { colors } from '../theme/colors';
 import SignInPage from '../screens/SignInPage';
+import { colors } from './../theme/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ const BottomTabs = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: '#000', // Arka plan siyah yapıld
+                    backgroundColor: '#000', // Arka plan siyah
                     height: 60, // Yükseklik artırıldı
                 },
             }}
@@ -26,11 +26,11 @@ const BottomTabs = () => {
                 component={HomePage}
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: () => (
+                    tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Image
                                 source={require('../assets/icons/navigation/home.png')}
-                                style={{ width: 25, height: 25 }}
+                                style={{ width: 30, height: 30, tintColor: focused ? colors.Button1 : 'white' }}
                                 resizeMode="contain"
                             />
                         </View>
@@ -42,11 +42,44 @@ const BottomTabs = () => {
                 component={SignInPage}
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: () => (
+                    tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Image
                                 source={require('../assets/icons/navigation/email.png')}
-                                style={{ width: 25, height: 25 }}
+                                style={{ width: 25, height: 25, tintColor: focused ? colors.Button1 : 'white' }}
+                                resizeMode="contain"
+                            />
+                        </View>
+                    ),
+                }}
+            />
+
+            <Tab.Screen
+                name={'deneme'}
+                component={SignInPage}
+                options={{
+                    tabBarLabel: '',
+                    tabBarIcon: ({ focused }) => (
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Image
+                                source={require('../assets/icons/navigation/user.png')}
+                                style={{ width: 25, height: 25, tintColor: focused ? colors.Button1 : 'white' }}
+                                resizeMode="contain"
+                            />
+                        </View>
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name={'deneme2'}
+                component={SignInPage}
+                options={{
+                    tabBarLabel: '',
+                    tabBarIcon: ({ focused }) => (
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Image
+                                source={require('../assets/icons/navigation/setting.png')}
+                                style={{ width: 25, height: 25, tintColor: focused ? colors.Button1 : 'white' }}
                                 resizeMode="contain"
                             />
                         </View>
@@ -59,11 +92,11 @@ const BottomTabs = () => {
                 component={BasketPage}
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: () => (
+                    tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Image
                                 source={require('../assets/icons/navigation/wallet.png')}
-                                style={{ width: 25, height: 25 }}
+                                style={{ width: 25, height: 25, tintColor: focused ? colors.Button1 : 'white' }}
                                 resizeMode="contain"
                             />
                         </View>

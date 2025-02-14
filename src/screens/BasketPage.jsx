@@ -5,6 +5,7 @@ import { decreaseQuantity, increaseQuantity, removeFromBasket, loadBasketData } 
 import GeneralStyle from "../styles/GeneralStyle";
 import BasketStyle from "../styles/BasketPage/Basket";
 import { AddCircle, MinusCirlce, Trash } from "iconsax-react-native";
+import truncateText from "../utils/truncateText";
 
 const BasketPage = () => {
     const { cartItem, totalPrice } = useSelector((state) => state.basket);
@@ -13,6 +14,8 @@ const BasketPage = () => {
     useEffect(() => {
         dispatch(loadBasketData());
     }, [dispatch]);
+
+    const delivery = totalPrice === 0 ? 0 : 2
 
     return (
         <View style={GeneralStyle.container}>
@@ -68,7 +71,7 @@ const BasketPage = () => {
                                 </View>
                                 <View style={BasketStyle.cartRight}>
                                     <View style={BasketStyle.cartHead}>
-                                        <Text style={BasketStyle.itemName}>{item.name}</Text>
+                                        <Text style={BasketStyle.itemName}>{truncateText(item.name, 15)}</Text>
                                         <Trash color="#FFF" size="32" onPress={() => dispatch(removeFromBasket(item.id))} />
                                     </View>
 
@@ -97,13 +100,13 @@ const BasketPage = () => {
                 <View>
                     <View style={BasketStyle.group}>
                         <Text style={BasketStyle.total}>Delivery Fee</Text>
-                        <Text style={BasketStyle.totalPrice}>$2.00</Text>
+                        <Text style={BasketStyle.totalPrice}>${delivery}</Text>
                     </View>
 
 
                     <View style={BasketStyle.group}>
                         <Text style={BasketStyle.total}>Total</Text>
-                        <Text style={BasketStyle.totalPrice}>${totalPrice + 2}</Text>
+                        <Text style={BasketStyle.totalPrice}>${totalPrice + delivery}</Text>
                     </View>
                 </View>
 

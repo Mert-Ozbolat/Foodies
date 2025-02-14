@@ -54,14 +54,12 @@ const basketSlice = createSlice({
                 state.cartItem.splice(itemIndex, 1);
             }
 
-            // Eğer sepet boşsa totalPrice'ı sıfırlayalım
             if (state.cartItem.length === 0) {
                 state.totalPrice = 0;
             }
 
             state.totalPrice = parseFloat(state.totalPrice.toFixed(2));
 
-            // AsyncStorage'a kaydetme
             saveBasketToStorage(state);
         },
 
@@ -100,7 +98,6 @@ const basketSlice = createSlice({
             saveBasketToStorage(state);
         },
 
-        // AsyncStorage'tan veriyi yüklemek için reducer
         loadBasket: (state, action) => {
             state.cartItem = action.payload.cartItem || [];
             state.totalQuantity = action.payload.totalQuantity || 0;
@@ -132,7 +129,7 @@ const loadBasketFromStorage = async (dispatch) => {
         const savedBasket = await AsyncStorage.getItem('basketData');
         if (savedBasket) {
             const basketData = JSON.parse(savedBasket);
-            dispatch(loadBasket(basketData));  // Sepeti Redux store'a yükle
+            dispatch(loadBasket(basketData));
         }
     } catch (error) {
         console.error('Sepet verisi AsyncStorage\'tan alınamadı', error);
